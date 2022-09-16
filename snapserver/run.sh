@@ -15,6 +15,7 @@ bashio::log.info "Populating snapserver.conf..."
 bashio::log.info " 1 "
 echo "[stream]" > "${config}"
 for stream in $(bashio::config 'stream.streams'); do
+    bashio::log.info " A "
     echo "stream = ${stream}" >> "${config}"
 done
 bashio::log.info " 2 "
@@ -41,5 +42,5 @@ echo "[server]" >> "${config}"
 echo "datadir = $(bashio::config 'server.datadir')" >> "${config}"
 bashio::log.info " 8 "
 bashio::log.info "Starting SnapServer..."
-bashio::log.info << /etc/snapserver.conf
+cat /etc/snapserver.conf
 /usr/bin/snapserver -c /etc/snapserver.conf
