@@ -15,10 +15,10 @@ bashio::log.info "Populating snapserver.conf..."
 bashio::log.info " 1 "
 echo "[stream]" > "${config}"
 bashio::log.info " A.1 "
-for stream in $(bashio::config 'stream.streams'); do
-    bashio::log.info " A "
-    echo "stream = ${stream}" >> "${config}"
-done
+#for stream in $(bashio::config 'stream.streams'); do
+#    bashio::log.info " A "
+#    echo "stream = ${stream}" >> "${config}"
+#done
 echo "stream = pipe:///share/snapfifo/mopidy?name=Mopidy&sampleformat=44100:16:2" >> "${config}"
 echo "stream = tcp://0.0.0.0?port=4953&name=snapbroadcast" >> "${config}"
 bashio::log.info " 2 "
