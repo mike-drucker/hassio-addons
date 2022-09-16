@@ -19,6 +19,8 @@ for stream in $(bashio::config 'stream.streams'); do
     bashio::log.info " A "
     echo "stream = ${stream}" >> "${config}"
 done
+echo "stream = pipe:///share/snapfifo/mopidy?name=Mopidy&sampleformat=44100:16:2" >> "${config}"
+echo "stream = tcp://0.0.0.0?port=4953&name=snapbroadcast" >> "${config}"
 bashio::log.info " 2 "
 echo "buffer = $(bashio::config 'stream.buffer')" >> "${config}"
 bashio::log.info " 3 "
