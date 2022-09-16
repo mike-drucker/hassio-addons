@@ -1,6 +1,6 @@
 {
   "name": "snapcast-server",
-  "version": "0.29",
+  "version": "0.30",
   "slug": "snapcastserver",
   "description": "Snapcast Server",
   "startup": "system",
